@@ -28,7 +28,7 @@ app.post('/webhook', (req, res) => {
   }
 });
 
-// Accepts GET requests at the /webhook endpoint for initial verification
+// Accepts GET requests at the /webhook endpoint for initial v
 app.get('/webhook', (req, res) => {
   const verify_token = process.env.VERIFY_TOKEN;
 
