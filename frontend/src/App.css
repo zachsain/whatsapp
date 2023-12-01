@@ -7,32 +7,90 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+.chatScreen__message{
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  /* padding-bottom: 30px; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.chatScreen__text{
+  margin-left: 10px;
+  background-color: lightgray;
+  padding: 15px;
+  border-radius: 20px;
+
+}
+
+.chatScreen__timestamp {
+  text-align: center;
+  padding: 20px;
+  color: grey;
+}
+
+.chatScreen__textUser{
+  margin-left: auto;
+  background-color: #29b3cd;
+  padding: 15px;
+  border-radius: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.chatScreen--chatContainer{
+  padding-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.chatScreen__input{
+  display: flex;
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid lightgray;
 }
+
+.chatScreen__inputField {
+  flex: 1;
+  padding: 15px;
+  border: none;
+}
+
+.chatScreen__inputButton {
+  border: none;
+  margin-right: 20px;
+  background-color: white;
+  font-weight: bolder;
+  color: #0071BC;
+}
+
+.chatScreen {
+  height: calc(100vh - 100px); /* Adjust the value to fit your layout */
+  overflow-y: scroll;
+}
+
+.chat__image__link {
+  height: 55px !important;
+  width: 55px !important;
+  cursor: pointer;
+}
+
+.chatScreen__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.chat__image__link:hover{
+  box-shadow: 5px 10px 10px rgb(222, 221, 221);
+}
+
+.chat__image__msg{
+  cursor: pointer;
+}
+
+/* position: fixed;
+bottom: 0; this fixes our input field to the botton of the screen */
