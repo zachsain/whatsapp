@@ -21,11 +21,9 @@ function App() {
   };
 
   useEffect(() => {
-    console.log('Effect is running');
     sendMessage("hello");
 
     const handleNewMessage = (newMessage) => {
-      console.log('New message received:', newMessage);
       setLogs((prevLogs) => [...prevLogs, newMessage]);
     };
   
@@ -34,17 +32,11 @@ function App() {
   
     // Cleanup the listener when the component is unmounted
     return () => {
-      console.log('Cleaning up');
       socket.off('newMessage', handleNewMessage);
     };
   }, []);
 
-  useEffect(() => {
-    console.log('Logs changed:', logs);
-
-  }, [logs]);
-
-
+ 
   useEffect(() => {
     if (logs) {
       // Create a set to store unique messages
@@ -108,12 +100,7 @@ function App() {
   }, [logs, allMessages]);
   
 
-  
-console.log(allMessages)
-console.log(latestDeliveredTimestamp)
-console.log(delivered)
-
-function handleSubmit(e) {
+  function handleSubmit(e) {
   e.preventDefault();
     // Replicate the POST request
     const url = 'https://graph.facebook.com/v18.0/174323312431372/messages';
@@ -147,7 +134,7 @@ function handleSubmit(e) {
         console.error('Error sending message:', error);
         // Handle error, if needed
       });
-      
+
       if (allMessages.length === 0 || latestDeliveredTimestamp > allMessages[allMessages.length - 1].timestamp) {
         const newMessage = {
           sender: '15550815927',
@@ -167,7 +154,8 @@ function handleSubmit(e) {
  
 
   return (
-    <div className="chatScreen" ref={chatBoxRef}>
+    <div className="">   
+       <div className="chatScreen" ref={chatBoxRef}>
         <div className="chatScreen--chatContainer">
         <p className="chatScreen__timestamp"></p>
       
@@ -197,6 +185,8 @@ function handleSubmit(e) {
             <button type='submit' className="chatScreen__inputButton">SEND</button>
         </form>
     </div>
+    </div>
+
   );
 }
 
