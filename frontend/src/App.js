@@ -4,7 +4,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import io from 'socket.io-client';
 
 
-// const socket = io('http://localhost:3000');
 const socket = io('http://localhost:3000', { transports: ['websocket'] });
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
   const [allMessages, setAllMessages] = useState([])
   const [messageContent, setMessageContent] = useState("")
   const [conversationId, setConversationId] = useState("")
-  const [delivered, setDelivered] = useState(false)
   const chatBoxRef = useRef(null);
   const [latestDeliveredTimestamp, setLatestDeliveredTimestamp] = useState(null);
 
@@ -139,6 +137,13 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         console.log('Message sent successfully:', data);
+        const newMessage = {
+          sender: '15550815927',
+          text: messageContent,
+          timestamp: latestDeliveredTimestamp,
+        };
+        setAllMessages((prevMessages) => [...prevMessages, newMessage]);
+        setMessageContent('');
         // Handle success, if needed
       })
       .catch((error) => {
@@ -146,20 +151,10 @@ function App() {
         // Handle error, if needed
       });
 
-      if (allMessages.length === 0 || latestDeliveredTimestamp > allMessages[allMessages.length - 1].timestamp) {
-        const newMessage = {
-          sender: '15550815927',
-          text: messageContent,
-          timestamp: latestDeliveredTimestamp,
-        };
+     
+       
     
-        // Update state with the new message
-        setAllMessages((prevMessages) => [...prevMessages, newMessage]);
-    
-        // Clear the messageContent or update other relevant state values if needed
-        setMessageContent('');
-    
-    }
+
   }
 
  
