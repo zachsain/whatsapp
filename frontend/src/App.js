@@ -15,6 +15,17 @@ function App() {
   const [delivered, setDelivered] = useState(false)
   const chatBoxRef = useRef(null);
   const [latestDeliveredTimestamp, setLatestDeliveredTimestamp] = useState(null);
+
+  function scrollToBottom(){
+    if (chatBoxRef.current) {
+        chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+      }
+  }
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [allMessages]);
+
   const sendMessage = (message) => {
     // Send the message to the server
     socket.emit('sendMessage', message);
@@ -104,7 +115,7 @@ function App() {
   e.preventDefault();
     // Replicate the POST request
     const url = 'https://graph.facebook.com/v18.0/174323312431372/messages';
-    const accessToken = 'EAAWJaxsIRAwBO9YSpLhNQECHwF6KBZCWrpGZAomudZAtYoJGEfLBSotxEavN4BtU8NBB10b3getyQXqSadkCVYt6D434SZASCkW2jpKNAo4i6ChfOuahLXZCOJzjgRYYQA1JVjOvqZAgcPY3CKFzILLwHbZBRtfk2VpZBqoPceUxfUDeX1TmNGIdkK6eVgXuiI4mVn4ZAic113gzfjFuyPgZDZD'; // Replace with your actual access token
+    const accessToken = 'EAAWJaxsIRAwBOZB3m3EoaUQbzsAwQwf8lV7sZC3RdCR9RzBhLQivpJovWlZBDH9DTyPoLWcbbDLqJFWuZCbrXSgA4AgkK7TeZAB9fPImglazuRktiDTYUBDCFsfHgnBXMivQglkXTFomMZBZBjMMzezwYJio7aiv0ivVx1tksTLhDs7wSQ3A6NxIpKd4PMNCrG82KOZC94wSjYR8MZCRe'; // Replace with your actual access token
 
     const requestBody = {
       messaging_product: 'whatsapp',
