@@ -7,7 +7,7 @@ Before running any of the following commands make sure you have the latest versi
 
 # Steps for setting up frontend repository 
 
-clone this repo down to your local machine: https://github.com/zachsain/whatsapp
+Clone this repo down to your local machine: https://github.com/zachsain/whatsapp
 
 In cli run following commands: 
 `
@@ -15,31 +15,31 @@ In cli run following commands:
 
 ### `cd whatsapp`
 
-open up root directory in vs code:
+Open up root directory in vs code:
 
 ### `code .` 
 
-open up new terminal in vs code and run the following commands:
+Open up new terminal in vs code and run the following commands:
 
-### `cd frontend `
+### `cd frontend`
 
-### `npm install `
+### `npm install`
 
-after installing app dependencies open App.js in your file directory /whatsapp/frontend/src/App.js
+After installing app dependencies open App.js in your file directory /whatsapp/frontend/src/App.js
 
-add your business account id provided by facebook on line 115 
+Add your business account id provided by facebook on line 115 
 
 ### `const url = 'https://graph.facebook.com/v18.0/YOURACCOUNTID/messages'`
 
-add you api access token on line 116 in App.js (remember this api key refreshes every 24 hrs, so it will need to be updated as such)
+Add you api access token on line 116 in App.js (remember this api key refreshes every 24 hrs, so it will need to be updated as such)
 
-add your phone number to line 121 in App.js (this is the number you will be messaging with via the chat interface)
+Add your phone number to line 121 in App.js (this is the number you will be messaging with via the chat interface)
 
 # Setting up backend repository
 
 To setup the backend for this chat application do the following:
 
-clone node server -> https://github.com/zachsain/whatsapp-backend (not in this root directory)
+Clone node server -> https://github.com/zachsain/whatsapp-backend (not in this root directory)
 
 In new terminal (outside of this root directory e.g /whatsapp) run the following:
 
@@ -68,8 +68,8 @@ this should be running on localhost:3000 (under the circumstances that it's not 
 open up new terminal window in vs code
 
 start ngrok socket: 
-
-### `ngrok http 3000` 
+ 
+ ```ngrok http 3000```
 
 once ngrok tunnel is running copy the http address from forwarding 
 
