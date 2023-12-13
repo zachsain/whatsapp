@@ -55,7 +55,7 @@ Open terminal inside vs code and run the following commands in cli:
 
 After dependencies are installed do the following:
 
-Setup ngrok account and install it on local machine -> ngrok.com
+Setup ngrok account and install it on local machine -> https://ngrok.com/
 
 Follow instructions in ngrok docs for installing ngrok on local machine 
 
