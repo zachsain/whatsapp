@@ -1,7 +1,7 @@
 # Summary
 
 This repository is for the frontend of a whatsapp business account messaging app. 
-This README is designed to walk you step by step on how to setup not only this frontend repository, but also setting up, and running the backend repository. 
+This README is designed to walk you step by step on how to setup not only this frontend repository, but also setting up the backend repository. 
 
 Before running any of the following commands make sure you have the latest version of Node installed on local machine: https://nodejs.org/en/download
 
@@ -49,7 +49,7 @@ In new terminal (outside of this root directory e.g /whatsapp) run the following
 
 ```code .```
 
-open terminal inside vs code and run the following commands in cli:
+Open terminal inside vs code and run the following commands in cli:
 
 ```npm install```
 
@@ -75,11 +75,11 @@ Once ngrok tunnel is running copy the http address from forwarding
 
 Should look like this:
 
-Forwarding         https://57b0-2600-1700-4da-6000-a165-be80-fdd2-e4e5.ngrok-free.app -> http://localhost:3000 
+```Forwarding         https://57b0-2600-1700-4da-6000-a165-be80-fdd2-e4e5.ngrok-free.app -> http://localhost:3000```
 
 Add that http address to webhook config on fb business account and add /webhooks to the end of the address:
 
-https://57b0-2600-1700-4da-6000-a165-be80-fdd2-e4e5.ngrok-free.app/webhooks 
+```https://57b0-2600-1700-4da-6000-a165-be80-fdd2-e4e5.ngrok-free.app/webhooks```
 
 Add token to webhook config on fb business account -> 12345
 
@@ -89,7 +89,7 @@ In frontend directory run
 
 ```npm start```
 
-confirm y to run on localhost:3001
+Confirm y to run on localhost:3001
 
 Now your frontend server on localhost:3001 should be communicating with backend server running on port 3000 in realtime 
 
