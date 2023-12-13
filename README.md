@@ -31,7 +31,7 @@ Add your business account id provided by facebook on line 115
 
 ```const url = 'https://graph.facebook.com/v18.0/YOURACCOUNTID/messages'```
 
-Add you api access token on line 116 in App.js (remember this api key refreshes every 24 hrs, so it will need to be updated as such)
+Add you API key on line 116 in App.js (remember this API key refreshes every 24 hrs, so it will need to be updated as such)
 
 Add your phone number to line 121 in App.js (this is the number you will be messaging with via the chat interface)
 
@@ -92,6 +92,8 @@ In frontend directory run
 Confirm y to run on localhost:3001
 
 Now your frontend server on localhost:3001 should be communicating with backend server running on port 3000 in realtime 
+
+## Notes
 
 Before realtime chat is enabled make sure you have sent out the message on facebook business account to the number in which intend on communicating with. This number should be the same as the number input on line 121 in App.js 
 
